@@ -8,7 +8,7 @@ name: 'Execução agendada'
 on:
   schedule:
     # Cronograma de execução
-    - cron: '*/5 * * * *' 
+    - cron: '*/5 * * * *'
 
 # tarefas dentro da pipeline
 jobs:
@@ -28,7 +28,7 @@ jobs:
 
       #instalação do Yarn
       - name: Instalando Yarn
-        run: npm install -g yarn   
+        run: npm install -g yarn
 
       #instalação das dependências
       - name: Instalando dependências
@@ -40,4 +40,4 @@ jobs:
 
       #executar os testes e2e
       - name: Executando os testes e2e
-        run: yarn run e2e     
+        run: yarn run e2e

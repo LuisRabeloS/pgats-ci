@@ -9,8 +9,8 @@ name: 'Execução por Deploy'
 on:
   workflow_run:
     workflows: [Execução manual]
-    types: 
-        - completed
+    types:
+      - completed
 
 # tarefas dentro da pipeline
 jobs:
@@ -30,7 +30,7 @@ jobs:
 
       #instalação do Yarn
       - name: Instalando Yarn
-        run: npm install -g yarn   
+        run: npm install -g yarn
 
       #instalação das dependências
       - name: Instalando dependências
@@ -42,4 +42,4 @@ jobs:
 
       #executar os testes e2e
       - name: Executando os testes e2e
-        run: yarn run e2e     
+        run: yarn run e2e
