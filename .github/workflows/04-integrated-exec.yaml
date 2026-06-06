@@ -9,6 +9,10 @@ name: 'Execução integrada'
 on:
   workflow_dispatch:
 
+  push:
+    branches:
+        - master  
+
 # tarefas dentro da pipeline
 jobs:
   #nome do job
@@ -75,6 +79,13 @@ jobs:
 
       - name: Executando testes E2E
         run: yarn run e2e
+
+      - name: Salvando relatório de testes
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+            path: ./playwright-report
+            name: Relatório de testes E2E
 
   deploy:
     runs-on: ubuntu-latest
