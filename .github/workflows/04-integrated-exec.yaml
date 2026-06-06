@@ -11,7 +11,7 @@ on:
 
   push:
     branches:
-        - master  
+      - master
 
 # tarefas dentro da pipeline
 jobs:
@@ -84,8 +84,8 @@ jobs:
         uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-            path: ./playwright-report
-            name: Relatório de testes E2E
+          path: ./playwright-report
+          name: Relatório de testes E2E
 
   deploy:
     runs-on: ubuntu-latest
